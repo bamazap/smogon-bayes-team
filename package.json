@@ -1,14 +1,19 @@
 {
   "name": "smogon-bayes-team",
-  "version": "1.0.0",
-  "description": "Smogon usage stats + Bayesian probability = team",
+  "version": "0.1.0",
+  "description": "Smogon usage stats + Bayesian probability = team?",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix"
   },
   "author": "Barry McNamara",
   "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/bamazap/smogon-bayes-team.git"
+  },
   "dependencies": {
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
