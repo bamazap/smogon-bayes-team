@@ -13,7 +13,7 @@ async function main() {
   for (let i = 0; i < 6; i += 1) {
     team.addMostLikelyTeammate();
   }
-  console.log(team.team);
+  console.log(team.export());
 }
 
 main();
