@@ -10,11 +10,12 @@
   },
   "author": "Barry McNamara",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/bamazap/smogon-bayes-team.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bamazap/smogon-bayes-team.git"
   },
   "dependencies": {
+    "argparse": "^1.0.10",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
   },
