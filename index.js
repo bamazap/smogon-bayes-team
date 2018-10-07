@@ -1,13 +1,8 @@
 /* eslint-disable no-console */
 
 const { ArgumentParser } = require('argparse');
-const { getChaosData } = require('./lib/smogon');
+const { getTimeframes, getChaos } = require('smogon-usage-fetch');
 const Team = require('./lib/Team');
-
-const now = new Date();
-const defaultYear = `${now.getFullYear()}`;
-const monthValue = now.getMonth(); // deliberately last month
-const defaultMonth = monthValue < 10 ? `0${monthValue}` : `${monthValue}`;
 
 const parser = new ArgumentParser({
   version: '0.1.0',
@@ -18,7 +13,6 @@ parser.addArgument(
   ['-t', '--timeframe'],
   {
     help: 'Year and month (e.g. 2018-07, default: most recent)',
-    defaultValue: `${defaultYear}-${defaultMonth}`,
   },
 );
 parser.addArgument(
@@ -37,13 +31,12 @@ parser.addArgument(
 );
 const args = parser.parseArgs();
 
-
-function logErrorIfExists(err) {
-  if (err) console.error(err);
-}
-
 async function main() {
-  const data = await getChaosData(args.timeframe, args.metagame, args.baseline, logErrorIfExists);
+  if (!args.timeframe) {
+    const timeframes = await getTimeframes();
+    args.timeframe = timeframes[timeframes.length - 1];
+  }
+  const { data } = await getChaos(args.timeframe, `${args.metagame}-${args.baseline}`);
   const team = new Team(data);
   for (let i = 0; i < 6; i += 1) {
     team.addMostLikelyTeammate();

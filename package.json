@@ -17,7 +17,8 @@
   "dependencies": {
     "argparse": "^1.0.10",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.5",
+    "smogon-usage-fetch": "^2.4.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
