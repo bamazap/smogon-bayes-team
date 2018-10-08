@@ -1,1 +1,1 @@
-# smogon-bayes-team
+# smogon-tools

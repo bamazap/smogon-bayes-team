@@ -1,7 +1,7 @@
 {
-  "name": "smogon-bayes-team",
-  "version": "0.1.0",
-  "description": "Smogon usage stats + Bayesian probability = team?",
+  "name": "smogon-tools",
+  "version": "0.2.0",
+  "description": "Pokemon Showdown! Tools",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -12,13 +12,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bamazap/smogon-bayes-team.git"
+    "url": "https://github.com/bamazap/smogon-tools.git"
   },
   "dependencies": {
     "argparse": "^1.0.10",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
-    "smogon-usage-fetch": "^2.4.0"
+    "smogon-usage-fetch": "^2.4.0",
+    "string-similarity": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
